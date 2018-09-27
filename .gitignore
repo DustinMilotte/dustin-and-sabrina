@@ -12,3 +12,4 @@ package-lock.json
 *.jpg
 *.png
 *.mp3
+/*.env
