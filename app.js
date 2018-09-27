@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 var path = require('path');
-const port = 3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/garden-scene.html')));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
