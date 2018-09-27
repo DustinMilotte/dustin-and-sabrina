@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="my-image" src="Sabrina_Dustin-1-frame.png">
+        <!-- <a-asset-item id="cubish" src="cubish.obj"></a-asset-item>
+        <a-asset-item id="cubishMat" src="cubish.mtl"></a-asset-item> -->
+      </a-assets>
+
+      <a-entity id="cameraRig">
+        <!-- camera -->
+        <a-entity id="head" camera wasd-controls look-controls></a-entity>
+        <!-- hand controls -->
+        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      </a-entity>
+      
+      <a-entity environment="
+        preset: starry;
+        ground: hills;
+        playArea: 1;
+        groundColor: #7a5230;
+        groundYScale: 50;
+        groundTexture: none;
+        grid: none;
+        dressing: trees;
+        dressingAmount: 100;
+        dressingColor: #526F35;
+        dressingScale: 10;
+        dressingVariance: '1 1 1';
+        dressingUniformScale: false;
+        lighting: point;
+        ">
+      </a-entity>  
+      
+      <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2"></a-entity>
+
+      <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 4.41404761740126 1.1040718813884514" rotation="-50 0 0"></a-entity>
+
+      <a-entity id="main-img-container" position="0 0 0">
+        <a-image 
+        src="#my-image"
+        position="0 2 -1.49"
+        height="2"
+        width="1.2">
+        </a-image>
+        <a-box id="marble-slab"
+          position="0 2 -2" 
+          rotation="0 0 0"
+          scale="2 3 1"  
+          src="Seamless-White-Marble-Stone-Texture.jpg" >
+        </a-box>
+        <a-box id="pedestal" src="Seamless-White-Marble-Stone-Texture.jpg" position="0 0.23748420646459323 -2.0414724366866412" scale="3 0.5 2" material="" geometry="">
+
+        </a-box>
+
+        </a-box>
+
+        </a-cylinder>
+      </a-entity>
+      
+      <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#aaaaff"></a-plane> -->
+      <a-sky color="#333333"></a-sky>
+    </a-scene>
+    <audio id="music" src="clairdelune_64kb.mp3" ></audio>
+
+    <script src="main.js"></script> 
+  </body>
+</html>
+
+
