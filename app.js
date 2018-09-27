@@ -6,7 +6,7 @@ if (port == null || port == "") {
   port = 3000;
 }
 
-app.use(express.static('public'));
+app.use(express.static('/public'));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/garden-scene.html')));
 
