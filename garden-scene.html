@@ -7,53 +7,93 @@
   <body>
     <a-scene>
       <a-assets>
-        <img id="my-image" src="public/Sabrina_Dustin-1-frame.png">
-        <!-- <a-asset-item id="cubish" src="cubish.obj"></a-asset-item>
-        <a-asset-item id="cubishMat" src="cubish.mtl"></a-asset-item> -->
+        <img id="couple1" src="/Sabrina_Dustin-1-frame.png">
+        <img id="white-marble" src="/Seamless-White-Marble-Stone-Texture.jpg" alt="white-marble-texture">
+        <img id="dirt" src="/dirt/Dirt_Albedo.jpg">
+        <img id="dirt-normal" src="/dirt/Dirt_Normal.jpg" alt="">
+        <img id="cliff-face-mossy" src="/cliff-face-mossy/CliffFaceMossy_Albedo.jpg" alt="">
+        <img id="cliff-face-normal" src="/cliff-face-mossy/CliffFace_Normal.jpg" alt="">
+        <img id="cliff-face-metallic" src="/cliff-face-mossy/CliffFace_Metallic.jpg" alt="">
       </a-assets>
-      
+
+      <!-- Environment -->
       <a-entity environment="
         preset: starry;
         ground: hills;
         playArea: 1;
-        groundColor: #7a5230;
+        groundColor: #524037;
         groundYScale: 50;
         groundTexture: none;
         grid: none;
         dressing: trees;
         dressingAmount: 100;
-        dressingColor: #526F35;
+        dressingColor: #123012;
         dressingScale: 10;
-        dressingVariance: 1 1 1;
+        dressingVariance: '5 5 5';
         dressingUniformScale: false;
         lighting: point;
         ">
       </a-entity>  
+      <a-entity id="ground" position="0 0.1 -2" geometry="primitive:plane;width:40;height:40" material="src:#dirt;repeat:40 40;normalMap:#dirt-normal" rotation="-90 0 0"></a-entity>
+      <a-entity
+        id ="stone-circle"
+        position="0.25 0.11 -3"
+        rotation="-90 0 0"
+        geometry="primitive: circle; radius: 3"
+        material="src: #cliff-face-mossy; 
+                  repeat: 3 3;
+                  normalMap: #cliff-face-normal;
+                  normalTextureRepeat: 3 3;
+                  normalScale: 1 1;
+                  ">
+      </a-entity>
+
+      <a-entity
+        id ="stone-path"
+        position="0.25 0.12 2.3"
+        rotation="-90 0 0"
+        geometry="primitive: plane; height: 5; width: 1;"
+        material="src: #cliff-face-mossy; 
+                  repeat: .5 2;
+                  normalMap: #cliff-face-normal;
+                  normalTextureRepeat: 3 3;
+                  normalScale: 1 1;
+                  ">
+      </a-entity>
       
+
+      <!-- Lights -->
       <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2"></a-entity>
 
-      <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 4.41404761740126 1.1040718813884514" rotation="-50 0 0"></a-entity>
+      <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 6.490690829115431 0" rotation="-69.27 0 0"></a-entity>
 
-      <a-entity id="main-img-container" position="0 0 0">
+      <!-- Props -->
+      <a-entity id="main-img-container" position="0 .25 -3">
         <a-image 
-        src="#my-image"
-        position="0 2 -1.49"
+        src="#couple1"
+        position="0 2 .51"
         height="2"
         width="1.2">
         </a-image>
         <a-box id="marble-slab"
-          position="0 2 -2" 
+          position="0 2 0" 
           rotation="0 0 0"
           scale="2 3 1"  
-          src="public/Seamless-White-Marble-Stone-Texture.jpg" >
+          src="#white-marble" >
         </a-box>
-        <a-box id="pedestal" src="public/Seamless-White-Marble-Stone-Texture.jpg" position="0 0.23748420646459323 -2.0414724366866412" scale="3 0.5 2" material="" geometry="">
+        
+        <a-box id="pedestal" src="#white-marble" position="0 .5 0" scale="3 0.5 2" material="" geometry="">
+        </a-box>
+        <a-box id="pedestal2" src="#white-marble" position="0 0 0" scale="4 0.5 3" material="" geometry="">
         </a-box>
       </a-entity>
+      
     </a-scene>
-    <audio id="music" src="public/clairdelune_64kb.mp3" ></audio>
 
-    <script src="public/main.js"></script> 
+
+    <audio id="music" src="/clairdelune_64kb.mp3" ></audio>
+
+    <script src="/main.js"></script> 
   </body>
 </html>
 
