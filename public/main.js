@@ -1,3 +1,3 @@
-var music = document.querySelector('#music');
+// var music = document.querySelector('#music');
 
-setTimeout(() => music.play(), 3000);
+// setTimeout(() => music.play(), 3000);

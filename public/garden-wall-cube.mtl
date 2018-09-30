@@ -1,0 +1,35 @@
+# Blender MTL File: 'garden-wall.blend'
+# Material Count: 3
+
+newmtl Material
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Dustin Milotte\\Documents\\repos\\Textures\\Cinder_block_pxr128_bmp.jpg
+
+newmtl Material.002
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\Dustin Milotte\Documents\repos\Blender\section07\20160229 SECTION 7  Assets\Cinder_block_pxr128_bmp.tif
+
+newmtl Material.002_Cinder_block_pxr128_bmp.jpg
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\Dustin Milotte\Documents\repos\Textures\Cinder_block_pxr128_bmp.jpg

@@ -14,13 +14,28 @@
         <img id="cliff-face-mossy" src="/cliff-face-mossy/CliffFaceMossy_Albedo.jpg" alt="">
         <img id="cliff-face-normal" src="/cliff-face-mossy/CliffFace_Normal.jpg" alt="">
         <img id="cliff-face-metallic" src="/cliff-face-mossy/CliffFace_Metallic.jpg" alt="">
+        <img id="cinder-block" src="/CementBrickWallAlbedo.jpg" alt="">
+        <img id="cinder-block-normal" src="/CementBrickWall_Normal.jpg" alt="">
+        <audio id="clair-ambience" src="clair-ambience.mp3"></audio>
+
+        <a-asset-item id="garden-wall-obj" src="/garden-wall.obj"></a-asset-item>
+        <!-- <a-asset-item id="garden-wall-mtl" src="/garden-wall.mtl"></a-asset-item> -->
+
+
       </a-assets>
+
+       <!-- Lights -->
+       <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2"></a-entity>
+       
+       <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 6.490690829115431 0" rotation="-69.27 0 0"></a-entity>
+
+
 
       <!-- Environment -->
       <a-entity environment="
         preset: starry;
         ground: hills;
-        playArea: 1;
+        playArea: 2;
         groundColor: #524037;
         groundYScale: 50;
         groundTexture: none;
@@ -39,7 +54,7 @@
         id ="stone-circle"
         position="0.25 0.11 -3"
         rotation="-90 0 0"
-        geometry="primitive: circle; radius: 3"
+        geometry="primitive: circle; radius: 4"
         material="src: #cliff-face-mossy; 
                   repeat: 3 3;
                   normalMap: #cliff-face-normal;
@@ -60,13 +75,8 @@
                   normalScale: 1 1;
                   ">
       </a-entity>
-      
-
-      <!-- Lights -->
-      <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2"></a-entity>
-
-      <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 6.490690829115431 0" rotation="-69.27 0 0"></a-entity>
-
+      <a-sound src="#clair-ambience" loop="true" autoplay="true"></a-sound>
+     
       <!-- Props -->
       <a-entity id="main-img-container" position="0 .25 -3">
         <a-image 
@@ -87,11 +97,13 @@
         <a-box id="pedestal2" src="#white-marble" position="0 0 0" scale="4 0.5 3" material="" geometry="">
         </a-box>
       </a-entity>
+
+      <a-entity id="garden-wall" obj-model="obj: #garden-wall-obj;" scale="1.5 2 1.5" material="src: #cinder-block; repeat: 1.5 1.5; normalMap: #cinder-block-normal; normalTextureRepeat: 1.5 1.5; color: #999" position="0 0 -2" ></a-entity>
       
     </a-scene>
 
 
-    <audio id="music" src="/clairdelune_64kb.mp3" ></audio>
+    <!-- <audio id="music" src="/clairdelune_64kb.mp3" ></audio> -->
 
     <script src="/main.js"></script> 
   </body>
