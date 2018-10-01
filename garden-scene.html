@@ -7,7 +7,6 @@
   <body>
     <a-scene>
       <a-assets>
-        <img id="couple1" src="/Sabrina_Dustin-1-frame.png">
         <img id="white-marble" src="/Seamless-White-Marble-Stone-Texture.jpg" alt="white-marble-texture">
         <img id="dirt" src="/dirt/Dirt_Albedo.jpg">
         <img id="dirt-normal" src="/dirt/Dirt_Normal.jpg" alt="">
@@ -16,6 +15,18 @@
         <img id="cliff-face-metallic" src="/cliff-face-mossy/CliffFace_Metallic.jpg" alt="">
         <img id="cinder-block" src="/CementBrickWallAlbedo.jpg" alt="">
         <img id="cinder-block-normal" src="/CementBrickWall_Normal.jpg" alt="">
+        <img id="ceremony1" src="/WeddingPhotos/Sabrina_Ceremony-7.jpg" alt="">
+        <img id="ceremony2" src="/WeddingPhotos/Sabrina_Ceremony-14.jpg" alt="">
+        <img id="couple1" src="/Sabrina_Dustin-1-frame.png">
+        <img id="couple2" src="/WeddingPhotos/Sabrina_Dustin-4.jpg" alt="">
+        <img id="couple3" src="/WeddingPhotos/Sabrina_Dustin-14.jpg" alt="">
+        <img id="couple4" src="/WeddingPhotos/Sabrina_Dustin-16.jpg" alt="">
+        <img id="family1" src="/WeddingPhotos/Sabrina_Family-23.jpeg" alt="">
+        <img id="family2" src="/WeddingPhotos/Sabrina_Family-15.jpeg" alt="">
+        <img id="family3" src="/WeddingPhotos/Sabrina_Family-32.jpeg" alt="">
+       
+
+
         <audio id="clair-ambience" src="clair-ambience.mp3"></audio>
 
         <a-asset-item id="garden-wall-obj" src="/garden-wall.obj"></a-asset-item>
@@ -25,11 +36,10 @@
       </a-assets>
 
        <!-- Lights -->
-       <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2"></a-entity>
+       <a-entity id="ambient-light"light="type: ambient; color: #CCC; intensity: .2
+       "></a-entity>
        
        <a-entity id="main-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="0 6.490690829115431 0" rotation="-69.27 0 0"></a-entity>
-
-
 
       <!-- Environment -->
       <a-entity environment="
@@ -63,6 +73,9 @@
                   ">
       </a-entity>
 
+      <a-entity id="garden-wall" obj-model="obj: #garden-wall-obj;" scale="1.5 2 1.5" material="src: #cinder-block; repeat: 1.5 1.5; normalMap: #cinder-block-normal; normalTextureRepeat: 1.5 1.5; color: #999" position="0 0 -2" ></a-entity>
+      
+
       <a-entity
         id ="stone-path"
         position="0.25 0.12 2.3"
@@ -77,13 +90,9 @@
       </a-entity>
       <a-sound src="#clair-ambience" loop="true" autoplay="true"></a-sound>
      
-      <!-- Props -->
+      <!-- Photos -->
       <a-entity id="main-img-container" position="0 .25 -3">
-        <a-image 
-        src="#couple1"
-        position="0 2 .51"
-        height="2"
-        width="1.2">
+        <a-image src="#couple1" position="0 2.1824120160862286 0.51" height="2" width="1.2" material="" geometry="">
         </a-image>
         <a-box id="marble-slab"
           position="0 2 0" 
@@ -98,8 +107,31 @@
         </a-box>
       </a-entity>
 
-      <a-entity id="garden-wall" obj-model="obj: #garden-wall-obj;" scale="1.5 2 1.5" material="src: #cinder-block; repeat: 1.5 1.5; normalMap: #cinder-block-normal; normalTextureRepeat: 1.5 1.5; color: #999" position="0 0 -2" ></a-entity>
-      
+      <a-image id="ceremony1-container" src="#ceremony1" position="-12 2.5 -9" rotation="0 45 0" material="" geometry="width:3;height:2"></a-image>
+      <a-entity id="cermony1-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="-11.068116136594634 6.880080161624455 -7.883572729822771" rotation="-65.48000000000002 41.566140602778155 1.532757349557078e-14"></a-entity>
+
+      <a-image id="ceremony2-container" src="#ceremony2" position="-8.271997543851512 2.5 -12.77199754385151" rotation="0 45 0" material="" geometry="width:3;height:2"></a-image>
+      <a-entity id="cermony2-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="-7.058199780900309 6.88 -11.439814359882819" rotation="-65.48 41.566 0"></a-entity>
+
+      <a-image id="couple2-container" src="#couple2" position="9.004879533602375 2.76973593718405 -12.631353706601695" rotation="0 -45 0" material="" geometry="width:3;height:2"></a-image>
+      <a-entity id="couple2-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="7.515293007098182 7.175463436626193 -11.1233234280864" rotation="-66.70827274562906 -40.00000000000003 0"></a-entity>
+
+      <a-image id="family1-container" src="#family1" position="13.170972493643719 2.7614758078123787 -8.419147402802409" rotation="0 -45 0" material="" geometry="width:3;height:2"></a-image>
+      <a-entity id="family1-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="11.600933418017194 7.241659060474577 -6.782531365398742" rotation="-66 -40 0"></a-entity>
+
+      <a-image id="couple4-container" src="#couple4" position="-11.863052949869441 2.3766223943143894 8.377297138727183" rotation="0 -45 0" material="" geometry="width:2;height:3"></a-image>
+      <a-entity id="couple4-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="-9.710692174827301 7.21412830798393 6.460634010785048" rotation="-119.99999999999999 -45 0"></a-entity>
+
+      <a-image id="couple3-container" src="#couple3" position="-7.789524320982012 2.377 12.45047567901799" rotation="0 -45 0" material="" geometry="width:2;height:3"></a-image>
+      <a-entity id="couple3-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="-5.883765620283322 7.21412830798393 10.287560565329027" rotation="-119.99999999999999 -45 0"></a-entity>
+
+      <a-image id="family2-container" src="#family2" position="12.706081183789365 2.496608394299872 8.065664671567458" rotation="0 45 0" material="" geometry="width:2;height:3"></a-image>
+      <a-entity id="family2-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="10.592294531925235 7.910598433754064 6.144587864874039" rotation="-65 -135 0"></a-entity>
+
+      <a-image id="family3-container" src="#family3" position="9.015922884095307 2.496608394299872 11.755822971261518" rotation="0 45 0" material="" geometry="width:2;height:3"></a-image>
+      <a-entity id="family3-spot-light" light="type:spot;angle:25;penumbra:1;distance:100" position="7.03366517106787 7.911 9.703334828932132" rotation="-65 -135 0"></a-entity>
+     
+     
     </a-scene>
 
 
